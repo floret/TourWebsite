@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:og="http://opengraphprotocol.org/schema/"
+      xml:lang="en-GB" lang="en-GB"  itemscope itemtype="http://schema.org/Article">
+<head>
+<title>h2g2 - NetHack - the Computer Game</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<link rel="icon" href="/img/global/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width = 996" />
+<meta name="version" content="20120505" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Not Panicking Ltd" />
+<meta name="description" content="NetHack - the Computer Game, from h2g2, the Unconventional Guide to Life, the Universe and Everything" />
+<meta property="og:title" content="h2g2 - NetHack - the Computer Game" />
+<meta property="og:description" content="h2g2, the Unconventional Guide to Life, the Universe and Everything" />
+<meta property="og:image" content="http://h2g2.com/h2g2/blobs/guide-crest.png" />
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css"  />
+<link rel="stylesheet" type="text/css" href="/css/fixed_all_browsers_gvl3.css"  />
+<link rel="stylesheet" type="text/css" href="/css/themes/default/all_browsers.css"  />
+<link rel="stylesheet" type="text/css" href="/css/guideml.css"  />
+
+	<!-- tab pane styling -->
+	<style type="text/css">
+	/* root element for tabs  */
+ul.tabs { 
+	list-style:none; 
+	margin:0 !important; 
+	padding:0;	
+	border-bottom:1px solid #666;	
+	height:30px;
+}
+
+/* single tab */
+ul.tabs li { 
+	float:left;	 
+	text-indent:0;
+	padding:0;
+	margin:0 !important;
+	list-style-image:none !important; 
+}
+
+/* link inside the tab. uses a background image */
+ul.tabs a { 
+	background:#ffffff;
+	font-size:12px;
+	display:block;
+	height: 30px;  
+	line-height:30px;
+	width:156px;
+	text-align:center;	
+	text-decoration:none;
+	color:#3B7C92;
+	padding:0px;
+	margin:0px;	
+	position:relative;
+	top:1px;
+}
+
+ul.tabs a:active {
+	outline:none;		
+}
+
+/* when mouse enters the tab move the background image */
+ul.tabs a:hover {
+	background:#3B7C92;	
+	color:#fff;	
+}
+
+/* active tab uses a class name "current". its highlight is also done by moving the background image. */
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+	background:#3B7C92;		
+	cursor:default !important; 
+	color:#fff !important;
+}
+
+/* Different widths for tabs: use a class name: s, l, xl */
+
+/* width 1 */
+ul.tabs a.s 			{ background-position: -553px 0; width:81px; }
+ul.tabs a.s:hover 	{ background-position: -553px -31px; }
+ul.tabs a.s.current  { background-position: -553px -62px; }
+
+/* width 2 */
+ul.tabs a.l 			{ background-position: -247px -0px; width:174px; }
+ul.tabs a.l:hover 	{ background-position: -247px -31px; }
+ul.tabs a.l.current  { background-position: -247px -62px; }
+
+
+/* width 3 */
+ul.tabs a.xl 			{ background-position: 0 -0px; width:248px; }
+ul.tabs a.xl:hover 	{ background-position: 0 -31px; }
+ul.tabs a.xl.current { background-position: 0 -62px; }
+
+
+/* initially all panes are hidden */ 
+.panes .pane {
+	display:none;		
+}
+
+/* tab pane styling */
+.panes div.tab-content {
+	display:none;		
+	height:350px;
+	width:625px;
+	font-size:8pt;
+}
+
+	</style>
+
+
+<!--[if lt IE 6]> 
+	<style> 
+    html body #blq-container #blq-foot { background: #4c4c4c; } 
+    html body #blq-container #blq-foot a, html body #blq-container #blq-foot p, html body #blq-container #blq-foot li { color: white; } 
+   	</style>
+<![endif]-->
+
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="/css/themes/default/ie6.css" media="screen" />
+<![endif]-->
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="/css/themes/default/ie7.css" media="screen" />
+<![endif]-->
+<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" href="/css/themes/default/ie8.css" media="screen" />
+<![endif]-->
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26085111-1']);
+  _gaq.push(['_setDomainName', 'h2g2.com']);
+  _gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/4451632/300x250', [300, 250], 'div-gpt-ad-1335442457353-0').addService(googletag.pubads());
+googletag.defineSlot('/4451632/728x90_BTF', [728, 90], 'div-gpt-ad-1335442457353-3').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+</head>
+<body>
+
+<div id="blq-global" class="blq-gvl-3">
+	<div id="blq-pre-mast" lang="en-GB"> <!-- Pre mast --> </div>
+</div>
+<div id="blq-container-outer">
+	<div id="blq-container" class="blq-lang-en-GB blq-gvl-3">
+		<div id="blq-container-inner" lang="en-GB">
+            <div id="blq-main" class="blq-clearfix">
+        		<div id="masthead" class="clearfix"> <a href="/" class="homepage_link" title="H2G2 Homepage"> </a>
+					<div id="flash"></div>
+                    <div class="top_search" >
+						<form action="/search" method="get" class="top_search_form" enctype="application/x-www-form-urlencoded">
+							<fieldset>
+								<p class="faux_h3">Find h2g2 Entries</p>
+								<input type="text" name="searchstring" id="searchstring" value="" class="text" />
+								<input type="submit" name="search" id="search" value="GO" class="button" />
+								<input type="checkbox" class="checkbox" checked="checked" value="1" id="approved_entries_only_chk" name="approved_entries_only_chk" />
+								<label class="approved_entries_chk" for="approved_entries_only_chk"> Approved Entries Only</label>
+								<a class="advanced_search" href="/search">Advanced Search</a>
+								<input type="hidden" name="search_type" value="article_quick_search" />
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div id="blq-local-nav">
+					<ul>
+                       <li><a href="http://h2g2.com" ><span>Front Page</span></a></li>
+                        <li><a href="http://h2g2.com/help/" ><span>About</span></a></li>
+                        <li><a href="http://h2g2.com/help/contribute/" ><span>How to Contribute</span></a></li>
+                        <li><a href="http://h2g2.com/categories/" ><span>Categories</span></a></li>
+                        <li><a href="http://h2g2.com/forums/" ><span>Forums</span></a></li>
+                        <li><a href="http://h2g2.com/peer_review/" ><span>Peer Review</span></a></li>
+                        <li class="last"><a href="http://h2g2.com/feedback" ><span>Feedback</span></a></li>
+	                      							<li class="sign_in"><a href="/login/portal"><span>Sign In to create or view your Personal Space</span></a></li>				</ul>
+                				<div class="clear"></div>
+			</div>
+            
+			<div id="blq-content">
+            
+	            <div id="main">
+
+					 
+<div id="fb-root"></div>
+<script type="text/javascript">
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+</script>
+<div class="grid40">
+    <div class="grid39">        
+        <div itemscope itemtype="http://schema.org/Article" class="box">
+            <div class="head">                        <div class="ancestry">
+                            <p><a href="http://h2g2.com/categories/C142">Leisure & Lifestyle</a> &gt; <a href="http://h2g2.com/categories/C117">Toys, Games & Hobbies</a> &gt; <a href="http://h2g2.com/categories/C798">Games and Puzzles</a> &gt; <a href="http://h2g2.com/categories/C800">Consoles and Video/Computer Games</a>                        
+                            </p>
+                        </div>                    <div class="divider"></div>        
+                
+                                            <div style="display:none;">
+	                            <span itemprop="name">NetHack - the Computer Game</span>
+								<span itemprop="description">Content from the guide to life, the universe and everything</span>
+								<img itemprop="image" src="http://h2g2.com/h2g2/blobs/guide-crest.png">
+                            </div>
+							<div style="clear:both;"></div>
+							 
+                <div class="float_left created_by">
+                	<!-- comment -->
+                	    
+                    <p itemprop="datePublished" content="2010-02-22 00:00:00"><span class="bold">Created May 17, 2004</span> | Updated Feb 22, 2010</p>
+                </div>            
+                
+                
+                
+                <div class="float_right">
+                    	
+                         <div class="email_a_friend">
+                         	<p>
+	                        <a href="#conversations" class="conversations_link">
+	                        	<span class="conversation_icon"></span>
+	                        	1 Conversation	                        </a>
+                        </p>
+	                    </div>
+                </div>
+                
+                <div class="clear"></div>           
+                <h1 itemprop="name" class="color_2">NetHack - the Computer Game</h1>                        
+                                                                        
+            </div>
+                                
+            <div class="content">    
+                <div class="entry_body guide_fix"><span itemprop="articleBody"><p>NetHack is one of the most popular <a href="/approved_entry/A2089235">roguelike computer games</a> and is notable for having been developed by a team who mainly contacted each other over the <a href="/approved_entry/A157466">Internet</a>. The fact that the development team were from several different countries perhaps helped the game's eclecticism and bizarre sense of humour. It is often said that 'The DevTeam (development team) thinks of everything' - whatever you find for your character to do, they will have a plausible and often amusing response. For example:</p><p><ul><li> If a lawful character dips his long sword into a fountain, the Lady of the Lake may reach up and transform it into Excalibur. If a non-lawful character tries the same trick, she will be annoyed and curse the sword. </li><li> If you are given the chance to choose a level to teleport to, and you choose level 0, you'll go to nowhere and cease to exist. If you choose -1 to -9, you'll wind up high above the clouds. The fall will kill you, unless you're levitating or flying, in which case you'll land on the surface and escape the dungeon. If you choose -10 or less, you'll go straight to heaven (not a good thing, as it means you're dead). </li><li> It is sometimes possible to change into a monster (polymorph), and when you do, you acquire the monster's abilities. For example, if you polymorph into a female red dragon, you can breathe fire and lay eggs, which will later hatch into your pets. </li></ul></p><h3>What's it all about then?</h3><p>According to the manual, you have been feeling discontented with your job and having strange and vivid dreams of adventuring and combat. When you hear about a mysterious and powerful item known as the Amulet of Yendor, you realise that it is your destiny to descend into the Dungeons of Doom and recover it for your deity. The main aim of the game is to retrieve the Amulet of Yendor from deep in the dungeon, but the general idea is to collect useful stuff, kill hostile monsters and generally head deeper into the dungeon. On your way down, you will encounter a few branches off the main dungeon. These are a good source of useful objects and some are necessary to complete the game.</p><p>Your character is initially accompanied by a pet cat, dog, or if you are playing a Knight, horse. You can give your pet a name, and you can tame more pets along the way. Domestic animals can be tamed by feeding them, while other monsters can sometimes be tamed by magic. Pets have several uses - at the beginning of the game, your pet may well be stronger than you, and can be a great help in combat. They can also sense when an item is cursed, and will be reluctant to walk on cursed items. They can be used to steal from shops without repercussions, and rewarding them with food will train them to do this more effectively. (Some people don't like pets, perhaps because of the effort required to keep them fed. For these people, there is the 'nopet' option of starting without a pet.)</p><p>Dungeon shops are useful places to find things, though the better items are generally more expensive. Experienced NetHack players can tell quite a lot about what an item might be just from its price. Don't annoy the shopkeepers, though, they're much better able to defend themselves than the bloke in your local offy, and quite willing to kill you. Looting the shop with the aid of a pet is perfectly safe, however, and a strong pet (not a normal dog or cat) may even manage to kill the shopkeeper.</p><p>If you get into real trouble - such as being surrounded by monsters and on the verge of death - pray and your god might save you. Don't do this too often, though, or they'll get angry and need to be appeased before they ever condescend to help you again. Sacrificing at your god's altar will eventually<a class="footnote" title="and I do mean eventually" name="back1" href="#footnote1"><font face="arial,helvetica,sans-serif" size="2"><sup>1</sup></font></a> produce results, too.</p><h3>History and Variants</h3><p>NetHack evolved from Hack, which added character classes, pets and shops to the basic features of the original Rogue game. The first version of NetHack (1.3d) was released on 28 July 1987, and the current version (3.4.3) on 9 December 2003. A <a href="http://www.spod-central.org/~psmith/nh/anhftime.html">detailed timeline of NetHack releases</a> is available on the web.</p><p>NetHack has spawned quite a few spin-offs, including NH+, NH++, NH--, NH: The Next Generation, Allegrohack<a class="footnote" title="Super poncey graphics version" name="back2" href="#footnote2"><font face="arial,helvetica,sans-serif" size="2"><sup>2</sup></font></a>, NewtHack, GnomeHack, QtNH, SLASH<a class="footnote" title="Super Lots of Added Stuff Hack" name="back3" href="#footnote3"><font face="arial,helvetica,sans-serif" size="2"><sup>3</sup></font></a> and the seminal <a href="/approved_entry/A2128763">SLASH'EM</a>, which is still under active development. Many features were introduced and refined in these variants (especially SLASH'EM) before being incorporated into NetHack itself. Some examples are riding, the Sokoban<a class="footnote" title="Sokoban is a Japanese puzzle in which the aim is to move boxes to their correct locations in a warehouse. You can only push one box at a time, and you cannot pull a box." name="back4" href="#footnote4"><font face="arial,helvetica,sans-serif" size="2"><sup>4</sup></font></a> levels, the Monk class, and conduct (voluntary challenges such as playing a vegetarian).</p><h3>Want to try it?</h3><p>Like most roguelikes, NetHack is freely downloadable from the Internet. You can either download the source code or ready-compiled binaries for a number of operating systems including both Linux and all recent versions of Windows at the <a href="http://www.nethack.org">official NetHack home page</a>.</p><div class="footnotes"><span><a class="footnotebottom" title="and I do mean eventually" name="footnote1" href="#back1"><font face="arial,helvetica,sans-serif" size="2"><sup>1</sup></font></a>and I do mean eventually</span><span><a class="footnotebottom" title="Super poncey graphics version" name="footnote2" href="#back2"><font face="arial,helvetica,sans-serif" size="2"><sup>2</sup></font></a>Super poncey graphics version</span><span><a class="footnotebottom" title="Super Lots of Added Stuff Hack" name="footnote3" href="#back3"><font face="arial,helvetica,sans-serif" size="2"><sup>3</sup></font></a>Super Lots of Added Stuff Hack</span><span><a class="footnotebottom" title="Sokoban is a Japanese puzzle in which the aim is to move boxes to their correct locations in a warehouse. You can only push one box at a time, and you cannot pull a box." name="footnote4" href="#back4"><font face="arial,helvetica,sans-serif" size="2"><sup>4</sup></font></a>Sokoban is a Japanese puzzle in which the aim is to move boxes to their correct locations in a warehouse. You can only push one box at a time, and you cannot pull a box.</span></div> 
+                </span></div>  
+                <div class="clear_both"></div>                  
+            </div>
+            
+            <div class="foot">    
+                <div class="divider"></div>        
+                                    <div class="float_right">
+                        <p><a href="/login/portal/approved_entry/A2266805">Bookmark on your Personal Space</a></p>
+                    </div>            </div>
+            <div class="clear_both"></div>
+        </div><!--<~inherit none > -->
+<div class="box forums conversations_entry">                        
+    <div class="head">
+        <a name="conversations"></a>
+        <div class="float_left">
+            <h2>Conversations About This Entry</h2>
+        </div>
+        <div class="float_right">                <div class="float_right">
+                    <p><a href="/login/portal/approved_entry/A2266805#conversations" class="boxed" title="SIGN IN TO START A CONVERSATION">SIGN IN TO START A CONVERSATION </a></p>
+                </div>            
+        </div>    
+        <div class="clear_both"></div>                
+    </div>
+    
+    <div class="content"> 
+        <div class="forum_list">
+        	<div class="list_date head">
+        		<p class="float_left">Title</p>
+        		<p class="float_right">Latest Post</p>
+        		<div class="clear"></div>
+        	</div>                	<ul class="list_date"><li>
+                                    <a href="http://h2g2.com/approved_entry/A2266805/conversation/view/F1735099/T511774">Greatest game Ever!</a><div class="date"><a href="http://h2g2.com/approved_entry/A2266805/conversation/view/F1735099/T511774/page/last">Oct 26, 2004</a></div>
+                                    <div class="clear"></div>
+                                </li>                    </ul>            <p class="bold">                    <span class="conversation_icon"> </span>                    <a href="/login/portal/approved_entry/A2266805#conversations">Subscribe</a> |    
+                    <a href="/login/portal/approved_entry/A2266805#conversations">Unsubscribe</a>                         
+                
+            </p>
+        </div>
+    </div>   
+</div>            
+    </div>    
+</div>
+
+
+<div class="grid21">
+        
+        <div class="box write_an_entry">
+    <div class="content">
+    	<a href="http://h2g2.com/random_approved_entry/" title="Infinite Improbability Drive"><img src="/img/global/iid_logo.png" width="60" style="float:right; margin-top:-8px; padding-right:5px;" border="0" /></a>
+		<h5 class="infinite">Infinite Improbability Drive</h5>
+		<p class="large" style="margin-top:5px;"><a href="http://h2g2.com/random_approved_entry/" title="Infinite Improbability Drive">Read a random Approved Entry</a></p>
+    </div>                        
+</div>        
+        <div class="box box2">
+            <div class="head">
+            
+                <div class="float_left">
+                    <h2>Approved Entry</h2>
+                </div>
+                <div class="float_right">
+                    <p>A2266805</p>
+                </div>            
+                <div class="clear_both"></div>
+            </div>
+            
+            <div id="share_block" style="margin-left:15px; margin-top:10px;">
+            	<div style="float:left;"><div class="fb-like" data-href="http://h2g2.com/approved_entry/A2266805" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div></div>
+				<div style="float:left;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://h2g2.com/approved_entry/A2266805" data-text="NetHack - the Computer Game" data-via="h2g2_guide">Tweet</a></div>
+                <div style="float:left;"><g:plusone size="medium" annotation="inline" width="120" href="http://h2g2.com/approved_entry/A2266805"></g:plusone></div>
+				<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <br style="clear:both;" />
+            </div>
+            
+            <div class="content"><p class="large">Written by</p>                
+                <ul class="author "><li><a href="http://h2g2.com/user/U152404" title="Bagpuss" class="" >Bagpuss</a><div class="clear"></div></li><li><a href="http://h2g2.com/user/U239615" title="Ekaterin" class="" >Ekaterin</a><div class="clear"></div></li></li>
+                    
+                </ul>                        
+                         <p class="large">Edited by</p>
+                         <ul class="author editor">
+                            <li><a href="http://h2g2.com/user/U214001" title="Annie the Great">Annie the Great</a>                            </li>                </ul>
+               <a href="https://plus.google.com/111101152609868556485?rel=author" style="display:none;">h2g2 Editors</a>
+				
+				  
+                <div class="clear_both"></div>        
+                
+                    
+            </div>
+            
+             <!--<~inherit none >-->
+   <!-- <div class="box"> -->
+        <div class="content references">                <p class="large">Referenced h2g2 Entries</p>
+                <ul class="references "><li><a href="http://h2g2.com/entry/A157466" title="The Internet - an Introduction">The Internet - an Introduction</a></li><li><a href="http://h2g2.com/entry/A2089235" title="Roguelike games">Roguelike games</a></li><li><a href="http://h2g2.com/entry/A2128763" title="SLASH'EM - the Computer Game">SLASH'EM - the Computer Game</a></li>                </ul><div class="divider"></div>                <p class="large">Related External Links</p>
+                <ul class="references"><li><a href="http://www.spod-central.org/~psmith/nh/anhftime.html">detailed timeline of NetHack releases</a></li><li><a href="http://www.nethack.org">official NetHack home page</a></li>                </ul>    
+                <p class="bold" style="color:#6E6E6E;">Not Panicking Ltd is not responsible for the content of external internet sites</p>
+                            
+            
+        </div>          
+    <!-- </div> -->
+	
+	            
+                        
+            
+            <div class="clear_both"></div>
+            
+            <div class="foot"></div>            
+        </div>
+        
+		<div class="box quote_box">
+        <div style="width:300px;height:250px;color:ff00ff;align:center;">
+        <div id='div-gpt-ad-1335442457353-0' style='width:300px; height:250px;'>
+		<script type='text/javascript'>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1335442457353-0'); });
+        </script>
+        </div>
+        </div>
+        </div>
+		
+		<!-- <~inherit none > SJD commented out because we're not currently using it -->
+<div class="box write_an_entry">
+    <div class="content">            <h5 class="write_entry"><a href="/login/portal/write_an_entry/" class="h2_link" title="Write an Entry">Write an Entry</a></h5>   
+    </div>                        
+</div><!-- <~inherit none > SJD commented out as we're not (currently) using this -->
+<div class="box dont_panic">             
+       <a href="http://h2g2.com/help/entry_faqs"><span> Entry FAQs</span></a>
+</div><div class="box">        
+    <div class="content article_selector">
+        <h4>Approved Entries</h4>
+        
+        <div class="tab-container tab1">
+            <div class="tab-items">                    
+                    <div class="tab-item tab-current">
+                        <p class="tab-heading tab-current first                            ">
+                            Most Recent                        </p>
+                        <div class="divider"></div>
+                        <div class="tab-content">                                <ol><li><a href="http://h2g2.com/approved_entry/A87798848" title="The Model Village, Bourton-on-the-Water">The Model Village, Bourton-on-the-Water</a></li><li><a href="http://h2g2.com/approved_entry/A87798127" title="The Beaulieu Dairy">The Beaulieu Dairy</a></li><li><a href="http://h2g2.com/approved_entry/A87802004" title="Mersey Beat - From Newspaper to Sound">Mersey Beat - From Newspaper to Sound</a></li><li><a href="http://h2g2.com/approved_entry/A87801311" title="Protecting Monuments of the World">Protecting Monuments of the World</a></li><li><a href="http://h2g2.com/approved_entry/A87804336" title="Anne Askew - Lincolnshire Martyr">Anne Askew - Lincolnshire Martyr</a></li><li><a href="http://h2g2.com/approved_entry/A87797885" title="Warner Brothers' Wartime Animation">Warner Brothers' Wartime Animation</a></li><li><a href="http://h2g2.com/approved_entry/A87797849" title="Bog Butter">Bog Butter</a></li><li><a href="http://h2g2.com/approved_entry/A87800385" title="How to Grow and Care for Saintpaulia - the African Violet">How to Grow and Care for Saintpaulia - the African Violet</a></li><li><a href="http://h2g2.com/approved_entry/A87800394" title="How to Make Nearly Bourbon Biscuits">How to Make Nearly Bourbon Biscuits</a></li><li><a href="http://h2g2.com/approved_entry/A87800402" title="Speedy Bacon and Mushroom Pasta">Speedy Bacon and Mushroom Pasta</a></li>                                </ol>                        </div>
+                    </div>                    
+                    
+            </div>
+        </div>        
+    </div>
+        
+    <h5 class="infinite"><a href="http://h2g2.com/random_approved_entry/" title="Infinite Improbability Drive">Infinite Improbability Drive</a></h5>
+    <p class="large no_margin">Read a random Approved Entry</p>
+    <p><a href="http://h2g2.com/help/entry_faqs#approved_entries" title="What are Approved Entries?">What are Approved Entries?</a></p>
+</div>  
+<!--<~inherit none >-->
+<div class="box follow_us">
+    <div class="head">
+        <h4>Follow Us</h4>
+    </div>
+    <div class="content">
+       <div class="icon_box first">
+        	<a href="http://www.facebook.com/pages/The-Hitchhikers-Guide-to-the-Galaxy-Earth-Edition/341327959239272" title="Facebook" class="facebook icon" target="_blank"></a>
+       </div>
+       <div class="text">
+       		<p><a href="http://www.facebook.com/pages/The-Hitchhikers-Guide-to-the-Galaxy-Earth-Edition/341327959239272" title="Facebook" target="_blank"><span>Facebook</span></a></p>
+        	<p><span>Become a fan of h2g2</span></p>
+       </div>
+       
+       <div class="clear_both"> </div>
+       
+       <div class="icon_box">
+        	<a href="http://twitter.com/h2g2_Comms" title="Twitter" class="twitter icon" target="_blank"></a>
+       </div>
+       <div class="text">
+       		<p><a href="http://twitter.com/h2g2_Comms" title="Twitter" target="_blank"><span>Twitter</span></a></p>
+        	<p><span>Follow h2g2</span></p>
+       </div>
+       <div class="clear_both"> </div>
+    </div>            
+</div>        
+    </div>   
+    
+				</div>
+                
+                <div style="clear:both; width:960px; background:#ffffff; padding:10px;">
+	                <div style="width:728px; height:90px;color:#ff00ff; margin:auto;">
+                    	<div id='div-gpt-ad-1335442457353-3' style='width:728px; height:90px;'>
+						<script type='text/javascript'>
+                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1335442457353-3'); });
+                        </script>
+                        </div>
+                    </div>
+                </div>
+                   
+                
+            </div>
+      </div>     
+      </div>
+    </div>
+  </div>
+
+<div style="display:none" id="scripts-container">
+  <script type="text/javascript" src="/js/jquery-1.6.2.js"></script>
+
+  <script type="text/javascript" src="/js/common_min.js"></script>
+  <script type="text/javascript" src="/js/sharetools.js"></script>
+
+  <script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+  <script type="text/javascript" src="/js/additional_min.js"></script>
+
+  <!-- alter to only have this on pages that we have an editor on -->
+  <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+  <!--  -->
+
+<script language="javascript" type="text/javascript">
+  // Track outbound clicks in GA
+  var dmain = document.location.host; 
+  $('a[href^="http"]:not([href*="'+dmain+'"])').click(function(){
+    _gaq.push(['_trackEvent', 'outbound', 'click', $(this).attr('href') ])
+  });
+</script>
+
+<!-- This JavaScript snippet activates those tabs -->
+<script type="text/javascript">
+
+// perform JavaScript after the document is scriptable.
+$(document).ready(function(){
+  // setup ul.tabs to work as tabs for each div directly under div.panes
+  $("ul.tabs").tabs("div.panes > div.tab-content");
+});
+</script>
+
+</div>
+<script type="text/javascript">
+$.post("/hook.php", { name: "Unknown Hiker", user_id: "", session_id: "atefiu42pv2jl1qtam3ib88j14", page_type: "entry", page_id: "2266805" },
+   function(data) {
+    // alert(data);
+   });
+</script>
+<div style="display:hidden"><a href="https://plus.google.com/111101152609868556485" rel="publisher">Find us on Google+</a></div>
+</body>
+</html>
