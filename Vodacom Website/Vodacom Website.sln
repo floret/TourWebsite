@@ -23,6 +23,19 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Vodacom Website", "http://l
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36D94277-35F6-4BA9-923B-1AFF80FB0EF4}"
+	ProjectSection(SolutionItems) = preProject
+		1.jpg = 1.jpg
+		2.jpg = 2.jpg
+		3.jpg = 3.jpg
+		4.jpg = 4.jpg
+		5.jpg = 5.jpg
+		6.jpg = 6.jpg
+		7.jpg = 7.jpg
+		8.jpg = 8.jpg
+		9.jpg = 9.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
